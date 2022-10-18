@@ -26,6 +26,35 @@
                 <div class="sc" id="sc"></div>
             </div>
         </div>
+
+        <!-- These are the setup of digitsl clock -->
+        <section class="container">
+            <div class="time-display">
+                <div id="clock"></div>
+            </div>
+            <form class="setAlarm">
+            <label class="alarm-heading"><h3>Set Alarm(24-Hour Clock)</h3><label><br>
+            <div class="set-alarm-field">
+                <input type="number" name="a_hour" id="a_hour" placeholder="HH" max="23" min="00">
+                <input type="number" name="a_min" id="a_min" placeholder="MM" max="59" min="00">
+                <input type="number" name="a_sec" id="a_sec" placeholder="SS" max="59" min="00">
+            </div>
+                <div class="controls">
+                    <button type="submit" class="set-alarm">Set Alarm</button>
+                    <button type="reset" onclick="clearAlarm()" class="clear-alarm">Stop Alarm</button>
+                </div>
+            </form> 
+            <hr style="margin-top: 20px">
+
+        <h3 style="margin: 20px 0;">Upcoming Alarms</h3>
+
+        <!--For making a list of all set alarms -->
+        <div id="upcoming-alarms">
+            <ul id="upcoming-alarms-list">
+                <!-- The list item is added using javascript when set alarm button is pressed -->
+            </ul>
+        </div>
+        </section>
     </div>
 
     <!-- linking the javascript file to the web page -->
