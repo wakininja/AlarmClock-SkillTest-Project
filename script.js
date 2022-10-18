@@ -38,7 +38,8 @@ function formatTime(time) {
 // plays the alarm ringtone at time setted.
 function ring(realTime) {
     audio.play();
-    alert(`It's ${realTime}`);
+    alert('Hey! it is (realTime)')
+    
 }
 // Shows the real time
 function updateTime() {
@@ -48,7 +49,7 @@ function updateTime() {
     const seconds = formatTime(today.getSeconds());
     const realTime = `${hour}:${minutes}:${seconds}`;
 
-    currentTime.innerText = `${hour}:${minutes}:${seconds}`;
+    currentTime.innerText = `${hour} : ${minutes} : ${seconds}`;
      //     check if the alarmList includes the current time , "realTime"  if yes, ring() is called
      if (alarmList.includes(realTime)) {
         ring(realTime);
@@ -115,12 +116,6 @@ remove = (value) => {
     alarmList.length = 0; // Clear contents
     alarmList.push.apply(alarmList, newList);
 }
-
-
-
-
-  
-    
 
 // function to stop the currently playing alarm
 function stopAlarm() {
