@@ -197,17 +197,31 @@ h3{
 }
 
 #Next-alarms-list li {
+    margin: 5px 0;
     width: 100%;
     background: #fff;
     height: 40px;
     line-height: 40px;
-    padding: 0 5px;
+    padding: 0 25px;
     font-size: 20px;
     font-weight: 700;
     position: relative;
     cursor: pointer;
     display: block;
-    margin: 5px 0;
     border-radius: 3px;
     transition: 0.5s linear;
+}
+/* Delete button style setup */
+.time-list button {
+    position: absolute;
+    top: -1;
+    right: 0;
+    width: 50px;
+    height: 40px;
+    font-weight: 300;
+    text-align: center;
+    border: none;
+    background: #e00;
+    border-radius: 3px;
+    box-shadow: -2px -1px 19px #091921;
 }
