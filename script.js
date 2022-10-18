@@ -8,7 +8,11 @@ const currentTime = document.querySelector('h1');
 const audio = new Audio('files/ringtone.mp3');
 const NextAlarmList = document.querySelector('#Next-alarms-list');
 const addAlarm = document.querySelector('.setAlarm');
+// Setting alarm 
+audio.loop = true;
 
+let alarmTime = null;
+let alarmTimeout = null;
 
 // Initializing the units and setting the interval
 setInterval(() =>{
@@ -31,6 +35,11 @@ function formatTime(time) {
     }
     return time;
 }
+// plays the alarm ringtone at time setted.
+function ring(realTime) {
+    audio.play();
+    alert(`It's ${realTime}`);
+}
 // Shows the real time
 function updateTime() {
     var today = new Date();
@@ -40,10 +49,13 @@ function updateTime() {
     const realTime = `${hour}:${minutes}:${seconds}`;
 
     currentTime.innerText = `${hour}:${minutes}:${seconds}`;
+     //     check if the alarmList includes the current time , "realTime"  if yes, ring() is called
+     if (alarmList.includes(realTime)) {
+        ring(realTime);
+    }
 
 }
-// calls updateTime() every second
-setInterval(updateTime, 1000);
+
 
 // Adds newAlarm to the upcoming-alarms-list as a new list item 
 function addNewAlarm(newAlarm) {
@@ -104,3 +116,18 @@ remove = (value) => {
     alarmList.push.apply(alarmList, newList);
 }
 
+
+
+
+  
+    
+
+// function to stop the currently playing alarm
+function stopAlarm() {
+    audio.pause();
+    if (alarmTimeout) {
+        clearTimeout(alarmTimeout);
+    }
+}
+// calls updateTime() every second
+setInterval(updateTime, 1000);
