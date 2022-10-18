@@ -6,7 +6,7 @@ const sc = document.querySelector('#sc');
 
 const currentTime = document.querySelector('h1');
 const audio = new Audio('files/ringtone.mp3');
-const upcomingAlarmList = document.querySelector('#upcoming-alarms-list');
+const NextAlarmList = document.querySelector('#Next-alarms-list');
 const addAlarm = document.querySelector('.setAlarm');
 
 
@@ -44,3 +44,51 @@ function updateTime() {
 }
 // calls updateTime() every second
 setInterval(updateTime, 1000);
+
+// Adds newAlarm to the upcoming-alarms-list as a new list item 
+function addNewAlarm(newAlarm) {
+    const html = 
+    `<li class = "time-list">        
+        <span class="time">${newAlarm}</span>
+        <button class="deleteAlarm" onclick = "remove(this.value)" value=${newAlarm}>X</button>       
+    </li>`
+    NextAlarmList.innerHTML += html
+};
+const alarmList = []; // To store all alarms Which has been set
+
+// event to set a new alarm whenever the form is submitted 
+addAlarm.addEventListener('submit', event => {
+
+    event.preventDefault(); // to prevent default behaviour of webpage and reloadness.
+
+    let hour = formatTime(addAlarm.hr.value);
+    if (hour === '0') {
+        hour = '00'
+    }
+    let minute = formatTime(addAlarm.min.value);
+    if (minute === '0') {
+        minute = '00'
+    }
+    let second = formatTime(addAlarm.sec.value);
+    if (second === '0') {
+        second = '00'
+    }
+
+    const newAlarm = `${hour}:${minute}:${second}`
+
+    // add newAlarm to alarmList array
+    if (isNaN(newAlarm)) {
+        if (!alarmList.includes(newAlarm)) {
+            alarmList.push(newAlarm);
+            addNewAlarm(newAlarm);
+            addAlarm.reset();
+        } else {
+            alert(`Alarm for ${newAlarm} already set.`);
+        }
+    } else {
+        alert("Invalid Time Entered")
+    }
+})
+
+
+
