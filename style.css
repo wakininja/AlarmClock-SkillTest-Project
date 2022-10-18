@@ -23,7 +23,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(/files/clock.png);
+    background: url(./files/clock.png);
     background-size: cover;
     border: 4px solid #091921;
     border-radius: 50%;
