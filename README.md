@@ -39,7 +39,7 @@
 * Github search.
 
 **You May Also like the**
-* Music Player - link
+* Music Player - https://wakininja.github.io/music_Player_project/
 
 
 
