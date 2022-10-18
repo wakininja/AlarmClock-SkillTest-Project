@@ -181,3 +181,33 @@ h3{
     text-decoration-thickness: 0px;
     color: rgb(155, 191, 211);
 }
+/* Styling the upcoming alarm List */
+#Next-alarms{
+    margin-top: 20px;
+    width: 100%;
+}
+#Next-alarms {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#Next-alarms-list {
+    list-style: none;
+    width: 400px;
+}
+
+#Next-alarms-list li {
+    width: 100%;
+    background: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: 0.5s linear;
+}
