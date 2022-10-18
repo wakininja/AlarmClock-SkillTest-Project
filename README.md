@@ -23,7 +23,7 @@
     
     
 **How To Use**
-  * To Use this alarm which click the below link to see this live & play with it simple :)
+  * To Use this alarm click the link https://wakininja.github.io/AlarmClock-SkillTest-Project/ to see this alarm live & play with it simple :)
   
   
 **Web Technologies Used**
