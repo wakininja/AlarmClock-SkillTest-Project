@@ -90,5 +90,17 @@ addAlarm.addEventListener('submit', event => {
     }
 })
 
+// removes the alarm from the upcoming-alarms-list when "Delete Alarm" is clicked
+NextAlarmList.addEventListener('click', e => {
+    if (e.target.classList.contains("deleteAlarm")) {
+        e.target.parentElement.remove();
+    }
+});
 
+// removes the alarm from the alarmList array when "Delete Alarm" is clicked
+remove = (value) => {
+    let newList = alarmList.filter((time) => time != value);
+    alarmList.length = 0; // Clear contents
+    alarmList.push.apply(alarmList, newList);
+}
 

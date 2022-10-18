@@ -206,7 +206,6 @@ h3{
     font-size: 20px;
     font-weight: 700;
     position: relative;
-    cursor: pointer;
     display: block;
     border-radius: 3px;
     transition: 0.5s linear;
@@ -223,5 +222,6 @@ h3{
     border: none;
     background: #e00;
     border-radius: 3px;
+    cursor: pointer;
     box-shadow: -2px -1px 19px #091921;
 }
